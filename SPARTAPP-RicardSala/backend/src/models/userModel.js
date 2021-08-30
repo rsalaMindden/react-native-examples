@@ -6,4 +6,7 @@ const userSchema = Schema({
   pasword: String,
   picture: { type: String, default: 'http://placehold.it/32x32' },
 });
+userSchema.methods.isValidPassword = function isValidPassword(password) {
+  return password === this.password;
+};
 module.exports = model('User', userSchema);
