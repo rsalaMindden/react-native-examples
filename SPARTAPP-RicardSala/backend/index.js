@@ -10,9 +10,14 @@ const port = process.env.PORT || 5000;
 
 server.use(morgan('dev'));
 server.use(express.json());
+
 const userRouter = require('./src/routes/userRouter');
+const exerciseRouter = require('./src/routes/exerciseRouter');
+const trainingRouter = require('./src/routes/trainingRouter');
 
 server.use('/api/user', userRouter);
+server.use('/api/exercise', exerciseRouter);
+server.use('/api/training', trainingRouter);
 
 server.listen(
   port,
