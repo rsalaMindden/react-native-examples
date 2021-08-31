@@ -25,7 +25,7 @@ router
         const token = jwt.sign(
           { user: data },
           process.env.JWT_SECRET,
-          { expiresIn: '5min' },
+          { expiresIn: '5m' },
 
         );
         const refreshToken = jwt.sign(
