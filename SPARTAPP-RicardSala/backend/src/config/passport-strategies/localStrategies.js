@@ -1,10 +1,9 @@
 const passport = require('passport');
 const { Strategy } = require('passport-local');
-const { findOne } = require('../../models/userModel');
 const User = require('../../models/userModel');
 
 passport.use(
-  'singup',
+  'signup',
   new Strategy(
     {
       usernameField: 'email',
@@ -42,7 +41,7 @@ passport.use(
     },
     async (email, password, next) => {
       try {
-        const user = await findOne({ email });
+        const user = await User.findOne({ email });
         if (!user) {
           next(null, false, { message: 'user not registred' });
         }
