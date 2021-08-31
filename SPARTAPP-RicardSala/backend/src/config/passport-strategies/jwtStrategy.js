@@ -1,11 +1,11 @@
-const passport = require('passport-local');
-const JWTStrategy = require('passport-jwt');
+const passport = require('passport');
+const JWTstrategy = require('passport-jwt');
 
 passport.use(
-  new JWTStrategy.Strategy(
+  new JWTstrategy.Strategy(
     {
       secretOrKey: process.env.JWT_SECRET,
-      jwtFromRequest: JWTStrategy.ExtractJwt.fromAuthHeaderAsBearerToken(),
+      jwtFromRequest: JWTstrategy.ExtractJwt.fromAuthHeaderAsBearerToken(),
     },
     async (token, next) => {
       try {
