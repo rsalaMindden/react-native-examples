@@ -5,7 +5,7 @@ async function createOne({ body }, res) {
     const newExercise = await Exercise.create(body);
     res.json(newExercise);
   } catch (error) {
-    res.send(500);
+    res.status(500);
     res.send(error);
   }
 }
