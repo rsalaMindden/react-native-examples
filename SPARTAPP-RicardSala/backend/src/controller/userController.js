@@ -1,11 +1,12 @@
 const User = require('../models/userModel');
 
-async function deleteUSerById({ params: { userId } }, res) {
+async function deleteUserById({ params: { userId } }, res) {
   try {
-    await User.findByIdAndDelete(userId);
+    const deletedUser = await User.findByIdAndDelete(userId);
+    res.send(deletedUser);
   } catch (error) {
-    res.status(500);
     res.send(error);
+    res.status(500);
   }
 }
 async function updateUserById({ params: { userId }, body }, res) {
@@ -22,6 +23,6 @@ async function updateUserById({ params: { userId }, body }, res) {
   }
 }
 module.exports = {
-  deleteUSerById,
+  deleteUserById,
   updateUserById,
 };
