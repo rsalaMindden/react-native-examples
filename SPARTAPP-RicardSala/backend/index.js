@@ -23,7 +23,7 @@ const authRouter = require('./src/routes/authRouter');
 server.use('/api/user', userRouter);
 server.use('/api/exercise', exerciseRouter);
 server.use('/api/training', trainingRouter);
-server.use('/', authRouter);
+server.use('/api', authRouter);
 
 server.listen(
   port,
