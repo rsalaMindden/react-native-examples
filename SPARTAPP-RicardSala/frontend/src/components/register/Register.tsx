@@ -15,11 +15,11 @@ const Profile = ({navigation}: any) => {
       <View style={styles.login}>
         <Image
           style={styles.logoName}
-          source={require('../images/spartappYELLOW.png')}
+          source={require('../../images/spartappYELLOW.png')}
         />
         <Image
           style={styles.logo}
-          source={require('../images/logo-spartapp.png')}
+          source={require('../../images/logo-spartapp.png')}
         />
       </View>
       <View style={styles.inputs}>
