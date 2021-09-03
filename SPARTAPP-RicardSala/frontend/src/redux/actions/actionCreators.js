@@ -1,6 +1,7 @@
 import actionTypes from './actionTypes';
 import {env} from '../../../.env';
 import axios from 'axios';
+import {connect} from 'react-redux';
 
 export function login(email, password) {
   return async dispatch => {
