@@ -1,18 +1,14 @@
 import actionTypes from '../actions/actionTypes';
 
-interface Action {
-  type: string;
-  data: any;
-}
 function loggedUserReducer(
-  loggedUser = {isAuthenticated: true},
-  action: Action,
+  loggedUser: any = {isAuthenticated: false},
+  action: any,
 ) {
   let newloggedUser = loggedUser;
   switch (action.type) {
     case actionTypes.LOG_IN:
       newloggedUser = {
-        ...action.data,
+        data: action.data,
         isAuthenticated: true,
       };
 
