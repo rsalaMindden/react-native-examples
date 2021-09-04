@@ -1,0 +1,36 @@
+import React from 'react';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+
+import Login from '../../components/Login/Login';
+import Signup from '../../components/Signup/Signup';
+import Home from '../../components/home-page/HomePage';
+import Training from '../../components/training mode/training';
+import PreTraining from '../../components/training mode/preTraining';
+import {useSelector} from 'react-redux';
+
+const Stack = createNativeStackNavigator();
+
+export default function Authenticate() {
+  const {isAuthenticated} = useSelector(
+    (store: any) => store.loggedUserReducer,
+  );
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}>
+      {!isAuthenticated ? (
+        <>
+          <Stack.Screen name="Login" component={Login} />
+          <Stack.Screen name="Signup" component={Signup} />
+        </>
+      ) : (
+        <>
+          <Stack.Screen name="HomePage" component={Home} />
+          <Stack.Screen name="Training" component={Training} />
+          <Stack.Screen name="PreTraining" component={PreTraining} />
+        </>
+      )}
+    </Stack.Navigator>
+  );
+}

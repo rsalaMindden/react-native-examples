@@ -5,7 +5,7 @@ const isValidPassword = require('../functions/isValidPassword');
 const userSchema = Schema({
   name: String,
   email: String,
-  pasword: String,
+  password: String,
   picture: { type: String, default: 'http://placehold.it/32x32' },
 });
 
