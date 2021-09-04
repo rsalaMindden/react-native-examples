@@ -1,6 +1,9 @@
 import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
+  aliginItems: {
+    alignItems: 'center',
+  },
   logo__NameBig: {
     width: 288,
     height: 61,
@@ -29,7 +32,6 @@ const styles = StyleSheet.create({
   },
   text__yellow: {
     color: '#FFD523',
-    marginLeft: 15,
   },
   text__blue: {
     color: '#2C2E43',
