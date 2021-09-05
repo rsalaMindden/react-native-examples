@@ -9,7 +9,7 @@ import {
   TextInput,
 } from 'react-native';
 import {useDispatch} from 'react-redux';
-import validateEmail from '../../utils/validateEmail';
+import validateEmail from '../../utils/functions/validateEmail';
 import {loginUserAction} from '../../redux/actions/actionCreators';
 
 import globalStyles from '../../theme/globalTheme';
@@ -44,28 +44,37 @@ function Login({navigation}: any) {
       </View>
       <View style={styles.inputs__info}>
         <View style={styles.box__input}>
-          <Text style={[globalStyles.text__yellow, styles.margin]}>email</Text>
+          <Text style={[globalStyles.text__yellow, globalStyles.margin]}>
+            email
+          </Text>
           <TextInput
-            style={styles.input__text}
+            style={[styles.input__text, globalStyles.text__gray]}
             placeholder="example@example.com"
             value={userEmail}
             onChangeText={text => setUserEmail(text)}
+            textAlign="center"
+            textContentType="emailAddress"
+            placeholderTextColor="#B2B1B9"
           />
 
-          <Text style={[globalStyles.text__yellow, styles.margin]}>
+          <Text style={[globalStyles.text__yellow, globalStyles.margin]}>
             password
           </Text>
           <TextInput
-            style={styles.input__text}
+            style={[styles.input__text, globalStyles.text__gray]}
             placeholder="password"
             value={userPassword}
+            secureTextEntry={true}
             onChangeText={text => setUserPassword(text)}
+            textAlign="center"
+            textContentType="password"
+            placeholderTextColor="#B2B1B9"
           />
         </View>
       </View>
       <View style={[globalStyles.aliginItems, buttonStyles.box__button]}>
         <TouchableOpacity
-          style={buttonStyles.littleButton}
+          style={[buttonStyles.littleButton]}
           onPress={() => navigation.push('Signup')}>
           <Text style={[globalStyles.text__yellow, styles.login__text]}>
             REGISTER
@@ -85,9 +94,6 @@ function Login({navigation}: any) {
   );
 }
 const styles = StyleSheet.create({
-  margin: {
-    marginLeft: 15,
-  },
   login__text: {
     justifyContent: 'center',
     fontSize: 24,
@@ -115,10 +121,9 @@ const styles = StyleSheet.create({
   input__text: {
     backgroundColor: '#2C2E43',
     borderRadius: 18,
-    marginLeft: 15,
+    marginLeft: 12,
     marginBottom: 17,
     width: 367,
-    paddingLeft: 20,
     height: 67,
     fontSize: 24,
   },
