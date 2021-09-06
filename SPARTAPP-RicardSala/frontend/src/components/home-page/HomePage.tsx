@@ -32,7 +32,7 @@ const Home = ({navigation}: any) => {
         source={require('../../images/trainingImg.png')}
         resizeMode="cover"
         style={styles.trainingTypes__image}>
-        <Pressable onPress={() => navigation.push('Training')}>
+        <Pressable onPress={() => navigation.push('popUpTraining')}>
           <Text
             style={[
               globalStyles.text__yellow,
@@ -48,7 +48,7 @@ const Home = ({navigation}: any) => {
         source={require('../../images/cronoImg.png')}
         resizeMode="cover"
         style={styles.trainingTypes__image}>
-        <Pressable onPress={() => navigation.push('Training')}>
+        <Pressable onPress={() => navigation.push('popUpCrono')}>
           <Text
             style={[
               globalStyles.text__yellow,
@@ -64,7 +64,7 @@ const Home = ({navigation}: any) => {
         source={require('../../images/equipmentImg.png')}
         resizeMode="cover"
         style={styles.trainingTypes__image}>
-        <Pressable onPress={() => navigation.push('Training')}>
+        <Pressable onPress={() => navigation.push('popUpEquipment')}>
           <Text
             style={[
               globalStyles.text__yellow,
