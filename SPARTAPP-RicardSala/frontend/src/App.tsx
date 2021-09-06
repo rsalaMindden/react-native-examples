@@ -4,12 +4,15 @@ import {NavigationContainer} from '@react-navigation/native';
 import Authenticate from './navigators/AuthenticationNavigator/AuthenticationNavigator';
 
 import configureStore from './redux/stores/index';
+import {MenuProvider} from 'react-native-popup-menu';
 const App = () => {
   return (
     <Provider store={configureStore()}>
-      <NavigationContainer>
-        <Authenticate />
-      </NavigationContainer>
+      <MenuProvider>
+        <NavigationContainer>
+          <Authenticate />
+        </NavigationContainer>
+      </MenuProvider>
     </Provider>
   );
 };
