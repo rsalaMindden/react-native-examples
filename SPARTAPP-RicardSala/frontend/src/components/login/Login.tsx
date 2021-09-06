@@ -18,7 +18,7 @@ import buttonStyles from '../../theme/buttonsTheme';
 function Login({navigation}: any) {
   const dispatch = useDispatch();
 
-  function handleLogin(userEmail: any, userPassword: any) {
+  function handleLogin(userEmail: string, userPassword: string) {
     if (validateEmail(userEmail)) {
       dispatch(
         loginUserAction({
@@ -116,14 +116,14 @@ const styles = StyleSheet.create({
   },
   inputs__info: {
     flex: 1,
-    alignItems: 'flex-start',
+    alignItems: 'center',
   },
   input__text: {
     backgroundColor: '#2C2E43',
     borderRadius: 18,
     marginLeft: 12,
     marginBottom: 17,
-    width: 367,
+    width: 320,
     height: 67,
     fontSize: 24,
   },
