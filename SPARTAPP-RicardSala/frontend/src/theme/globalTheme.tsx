@@ -60,5 +60,9 @@ const styles = StyleSheet.create({
   margin: {
     marginLeft: 15,
   },
+  invalid: {
+    color: 'red',
+    fontSize: 12,
+  },
 });
 export default styles;
