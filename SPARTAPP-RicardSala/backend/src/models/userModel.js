@@ -7,7 +7,7 @@ const userSchema = Schema({
   email: String,
   password: String,
   picture: { type: String, default: 'http://placehold.it/32x32' },
-  friends: { type: Schema.Types.ObjectId, ref: 'User' },
+  friends: [{ type: Schema.Types.ObjectId, ref: 'User' }],
 });
 
 userSchema.methods.isValidPassword = isValidPassword;
