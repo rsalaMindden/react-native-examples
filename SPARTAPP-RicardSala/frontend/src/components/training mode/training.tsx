@@ -16,7 +16,7 @@ const Training = ({navigation,
     const [done,setDone]=useState(filteredTrainings)
     function itsDone() {
       filteredTrainings[0].exercise.done =true
-      setDone(filteredTrainings)
+      setDone([...filteredTrainings])
     }
   return (
     <SafeAreaView style={[globalStyles.backgound, globalStyles.aliginItems]}>
@@ -27,8 +27,9 @@ const Training = ({navigation,
         />
       </Pressable>
       <Button
-          title="exercise list"
-          onPress={() => navigation.push('PreTraining')}
+      
+          title="Exercises List"
+          onPress={() => navigation.push('PreTraining',{training})}
         />
     <View  style={styles.time__box}>
 <Text style={[globalStyles.login__text, globalStyles.text__yellow,styles.text]}>timer</Text>
@@ -36,25 +37,37 @@ const Training = ({navigation,
       </View>
      
       <View>
-        {done.slice(0,2).map((actualExercise:any)=>(
-          <View key={actualExercise._id}style={styles.time__actualExerciseBox}>
+        {done.slice(0,2).map((actualExercise:any,index:any)=>(
+        (index===0)?( <View key={actualExercise._id} style={styles.time__actualExerciseBox}>
           
-    <Image
-    style={styles.trainings__picture}
-    source={{uri:actualExercise.exercise.picture}}></Image>
-     <View>
-      <Text style={[ globalStyles.text__yellow]}>{actualExercise.exercise.name}</Text>
-       <Text  style={[globalStyles.text__yellow, styles.reps__text,styles.justifyContent]} >reps {"\n"}
-         {actualExercise.reps}
-       </Text>
-         </View>
-       <View>
-         <Pressable onPress={itsDone}>
-       <Image
-    source={require('../../images/checkmark.circle.png')}/>
-    </Pressable>
-     </View>
-    </View>
+          <Image
+          style={styles.trainings__picture}
+          source={{uri:actualExercise.exercise.picture}}></Image>
+           <View>
+            <Text style={[ globalStyles.text__yellow]}>{actualExercise.exercise.name}</Text>
+             <Text  style={[globalStyles.text__yellow, styles.reps__text,styles.justifyContent]} >reps {"\n"}
+               {actualExercise.reps}
+             </Text>
+               </View>
+             <View>
+               <Pressable onPress={itsDone}>
+             <Image
+          source={require('../../images/checkmark.circle.png')}/>
+          </Pressable>
+           </View>
+          </View>):
+         ( <View key={actualExercise._id} style={styles.nextTraining__box}>
+          
+            <Image
+            style={styles.trainings__picture}
+            source={{uri:actualExercise.exercise.picture}}></Image>
+             <View>
+              <Text style={[ globalStyles.text__yellow]}>{actualExercise.exercise.name}</Text>
+               <Text  style={[globalStyles.text__yellow, styles.reps__text,styles.justifyContent]} >reps {"\n"}
+                 {actualExercise.reps}
+               </Text>
+                 </View>
+            </View>)
         ))}
     
     </View>
