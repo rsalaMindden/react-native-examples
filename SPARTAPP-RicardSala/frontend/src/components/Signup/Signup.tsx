@@ -169,17 +169,13 @@ const styles = StyleSheet.create({
     marginLeft: 14,
     alignSelf: 'flex-start',
   },
-  register__text: {
-    justifyContent: 'center',
-    fontSize: 24,
-    fontWeight: '600',
-  },
+
   buttonsMargin: {
     marginTop: 110,
   },
 
   box__input: {
-    alignItems: 'flex-start',
+    alignItems: 'center',
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
@@ -193,8 +189,8 @@ const styles = StyleSheet.create({
   input: {
     backgroundColor: '#2C2E43',
     borderRadius: 18,
-    marginBottom: 17,
-    width: 367,
+    marginBottom: 20,
+    width: 300,
     height: 67,
     fontSize: 24,
   },
