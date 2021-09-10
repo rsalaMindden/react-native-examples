@@ -106,7 +106,7 @@ const Home = ({navigation}: any) => {
           <View key={train._id}  >
    <TouchableOpacity
     style={[buttonStyles.filter__box ,globalStyles.aliginItems]}
-    onPress={() => navigation.push('Training')}
+    onPress={() => navigation.push('Training',{training:[train]})}
     >
    <Text style={[globalStyles.text__yellow,globalStyles.login__text]}  >
    {train.name}
