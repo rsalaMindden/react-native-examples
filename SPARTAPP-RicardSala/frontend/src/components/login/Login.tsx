@@ -53,6 +53,7 @@ function Login({navigation}: any) {
             value={userEmail}
             onChangeText={text => setUserEmail(text)}
             textAlign="center"
+            autoCapitalize='none'
             textContentType="emailAddress"
             placeholderTextColor="#B2B1B9"
           />
