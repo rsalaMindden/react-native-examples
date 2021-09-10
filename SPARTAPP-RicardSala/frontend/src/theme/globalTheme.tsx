@@ -4,6 +4,7 @@ const styles = StyleSheet.create({
   aliginItems: {
     alignItems: 'center',
   },
+
   logo__NameBig: {
     width: 288,
     height: 61,
