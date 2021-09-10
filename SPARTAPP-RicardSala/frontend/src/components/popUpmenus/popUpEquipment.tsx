@@ -32,6 +32,7 @@ export default function trainingpopUp({navigation}: any) {
     <SafeAreaView style={[globalStyles.backgound, globalStyles.aliginItems]}>
       <Menu style={styles.menu} renderer={renderers.Popover}>
         <ImageBackground
+        imageStyle={{borderRadius:15}}
           source={require('../../images/equipmentImg.png')}
           resizeMode="cover"
           style={styles.trainingTypes__image}

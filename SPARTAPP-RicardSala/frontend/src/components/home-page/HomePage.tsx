@@ -53,11 +53,12 @@ const Home = ({navigation}: any) => {
       />
       {search.length < 1 ? (
         <View>
+          <Pressable onPress={() => navigation.push('popUpTraining')}>
           <ImageBackground
             source={require('../../images/trainingImg.png')}
             resizeMode="cover"
+            imageStyle={{borderRadius:15}}
             style={styles.trainingTypes__image}>
-            <Pressable onPress={() => navigation.push('popUpTraining')}>
               <Text
                 style={[
                   globalStyles.text__yellow,
@@ -66,14 +67,15 @@ const Home = ({navigation}: any) => {
                 ]}>
                 TIPOS DE ENTRENAMIENTO
               </Text>
-            </Pressable>
           </ImageBackground>
+            </Pressable>
 
+          <Pressable onPress={() => navigation.push('popUpCrono')}>
           <ImageBackground
             source={require('../../images/cronoImg.png')}
             resizeMode="cover"
+            imageStyle={{borderRadius:15}}
             style={styles.trainingTypes__image}>
-            <Pressable onPress={() => navigation.push('popUpCrono')}>
               <Text
                 style={[
                   globalStyles.text__yellow,
@@ -82,14 +84,15 @@ const Home = ({navigation}: any) => {
                 ]}>
                 OBJETIVO POR TIEMPO
               </Text>
-            </Pressable>
           </ImageBackground>
+            </Pressable>
 
+            <Pressable onPress={() => navigation.push('popUpEquipment')}>
           <ImageBackground
             source={require('../../images/equipmentImg.png')}
             resizeMode="cover"
+            imageStyle={{borderRadius:15}}
             style={styles.trainingTypes__image}>
-            <Pressable onPress={() => navigation.push('popUpEquipment')}>
               <Text
                 style={[
                   globalStyles.text__yellow,
@@ -98,8 +101,8 @@ const Home = ({navigation}: any) => {
                 ]}>
                 EQIPAMIENTO
               </Text>
-            </Pressable>
           </ImageBackground>
+            </Pressable>
         </View>
       ):<View>
         {trainingFiltereds.map((train:any)=>(
@@ -124,7 +127,7 @@ const Home = ({navigation}: any) => {
 const styles = StyleSheet.create({
   search__box: {
     fontWeight: '600',
-    fontSize: 24,
+    fontSize: 20,
     alignContent: 'center',
     backgroundColor: '#2C2E43',
     marginTop: 35,
@@ -167,9 +170,10 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   trainingTypes__image: {
-    width: 349,
+   
+    width: 310,
     height: 155,
-    marginBottom: 15,
+    marginBottom: 35,
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
@@ -177,7 +181,6 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.43,
     shadowRadius: 9.51,
-
     elevation: 15,
   },
   search__icon: {
