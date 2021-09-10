@@ -17,7 +17,6 @@ const Training = ({navigation,
     function itsDone() {
       filteredTrainings[0].exercise.done =true
       setDone(filteredTrainings)
-      console.log('esto es ---------------->>>>>>>>',filteredTrainings[0].exercise.done)
     }
   return (
     <SafeAreaView style={[globalStyles.backgound, globalStyles.aliginItems]}>
