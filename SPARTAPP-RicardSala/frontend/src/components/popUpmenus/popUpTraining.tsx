@@ -6,58 +6,52 @@ import {
   SafeAreaView,
   ImageBackground,
 } from 'react-native';
-import {
-  Menu,
-  MenuOptions,
-  MenuTrigger,
-  renderers,
-} from 'react-native-popup-menu';
+
 
 import globalStyles from '../../theme/globalTheme';
+import { useSelector } from 'react-redux';
+
+
 
 export default function trainingpopUp({navigation}: any) {
-  function handleClickAMRAP() {
+  const trainings = useSelector((store: any) => store.trainings);
+  
+  function handleClick(trainingName: string) {
+    const training=trainings.filter(({name}: any)=> name === trainingName)
     navigation.navigate({
       name: 'Training',
       merge: true,
+params: {
+  training
+}
     });
   }
-  function handleClickPYRAMIDAL() {
-    navigation.navigate({
-      name: 'Training',
-      merge: true,
-    });
-  }
+  
   return (
-    <SafeAreaView style={[globalStyles.backgound, globalStyles.aliginItems]}>
-      <Menu style={styles.menu} renderer={renderers.Popover}>
-        <ImageBackground
+    <SafeAreaView style={[globalStyles.backgound, globalStyles.aliginItems,styles.menu]}>
+       <ImageBackground
           source={require('../../images/trainingImg.png')}
           resizeMode="cover"
+          imageStyle={{borderRadius:15}}
           style={styles.trainingTypes__image}
         />
-        <MenuTrigger>
-          <MenuOptions>
             <TouchableOpacity
-              onPress={handleClickAMRAP}
+              onPress={() => handleClick('AMRAP')}
               style={[styles.input__text]}>
               <Text style={[globalStyles.text__yellow, styles.input__text]}>
                 AMRAP
               </Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={handleClickPYRAMIDAL}>
+            <TouchableOpacity onPress={() => handleClick('FOR TIME')}>
               <Text style={[globalStyles.text__yellow, styles.input__text]}>
-                PYRAMIDAL
+                FOR TIME
               </Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={handleClickPYRAMIDAL}>
+            <TouchableOpacity onPress={() => handleClick('ABS 5 ROUND')}>
               <Text style={[globalStyles.text__yellow, styles.input__text]}>
                 ABS
               </Text>
             </TouchableOpacity>
-          </MenuOptions>
-        </MenuTrigger>
-      </Menu>
     </SafeAreaView>
   );
 }
@@ -92,10 +86,9 @@ const styles = StyleSheet.create({
 
   popUp: {
     justifyContent: 'center',
-    backgroundColor: 'red',
     height: 220,
     width: 250,
-    padding: 20,
+    padding: 200,
     borderRadius: 20,
   },
 });

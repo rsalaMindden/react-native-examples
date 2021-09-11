@@ -7,7 +7,6 @@ export function loginUserAction(user: any) {
     user.email = user.email.toLowerCase();
     try {
       const {data} = await axios.post(LOG_IN_URL, user);
-      console.log(data);
       dispatch({
         type: actionTypes.LOG_IN,
         user: data,
@@ -25,7 +24,6 @@ export function registerUser(user: any) {
     console.log(user);
     try {
       const {data} = await axios.post(SING_UP_URL, user);
-      console.log(data);
       dispatch({
         type: actionTypes.LOG_USER,
         data,

@@ -4,6 +4,7 @@ const styles = StyleSheet.create({
   aliginItems: {
     alignItems: 'center',
   },
+
   logo__NameBig: {
     width: 288,
     height: 61,
@@ -20,8 +21,10 @@ const styles = StyleSheet.create({
   },
   login__text: {
     justifyContent: 'center',
-    fontSize: 24,
+    fontSize: 20,
     fontWeight: '600',
+    marginLeft:10,
+    marginRight:10,
   },
   logo: {
     width: 198,
@@ -61,7 +64,7 @@ const styles = StyleSheet.create({
     marginLeft: 15,
   },
   invalid: {
-    color: 'red',
+    color: '#B2B1B9',
     fontSize: 12,
   },
 });

@@ -11,7 +11,7 @@ jest.mock('../../redux/actions/actionCreators',()=>({
 }));
 
 describe('Given a Login component',()=>{
-  describe('When it is rendered',()=>{
+  describe('When it is rendered',()=>{  
     let screen
     beforeEach(()=>{
       screen=render(<Login navigation={navigation} />)
