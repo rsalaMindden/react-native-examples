@@ -51,6 +51,7 @@ function Login({navigation}: any) {
             style={[styles.input__text, globalStyles.text__gray]}
             placeholder="example@example.com"
             value={userEmail}
+            testID="emailInput"
             onChangeText={text => setUserEmail(text)}
             textAlign="center"
             textContentType="emailAddress"
@@ -63,6 +64,7 @@ function Login({navigation}: any) {
           <TextInput
             style={[styles.input__text, globalStyles.text__gray]}
             placeholder="password"
+            testID="passwordInput"
             value={userPassword}
             secureTextEntry={true}
             onChangeText={text => setUserPassword(text)}
