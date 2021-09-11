@@ -82,7 +82,7 @@ function Login({navigation}: any) {
         </TouchableOpacity>
         <TouchableOpacity
           style={buttonStyles.littleButton}
-          onPress={() => {
+          onPress={() =>  {
             handleLogin(userEmail, userPassword);
           }}>
           <Text style={[globalStyles.text__yellow, styles.login__text]}>
