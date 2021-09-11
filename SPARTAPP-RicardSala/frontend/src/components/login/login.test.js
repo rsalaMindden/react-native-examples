@@ -7,7 +7,6 @@ const navigation={
   push:jest.fn()
 }
 jest.mock('../../redux/actions/actionCreators',()=>({
-  
   loginUser: jest.fn()
 }));
 

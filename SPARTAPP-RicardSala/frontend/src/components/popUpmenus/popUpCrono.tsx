@@ -34,6 +34,7 @@ export default function trainingpopUp({navigation}: any) {
         <ImageBackground
           source={require('../../images/cronoImg.png')}
           resizeMode="cover"
+          imageStyle={{borderRadius:15}}
           style={styles.trainingTypes__image}
         />
         <MenuTrigger>

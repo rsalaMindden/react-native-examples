@@ -16,7 +16,11 @@ async function createOne({ body }, res) {
 }
 async function getAll({ query }, res) {
   try {
-    const trainings = await Training.find(query);
+    const trainings = await Training.find(query)
+      .populate({
+        path: 'exercises.exercise',
+        select: ['name', 'description', 'picture', 'done'],
+      });
     res.json(trainings);
   } catch (error) {
     res.status(500);

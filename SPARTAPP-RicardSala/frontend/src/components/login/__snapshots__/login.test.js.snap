@@ -1,5 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+
 exports[`Given a Login component When it is rendered Then should match the snapshot 1`] = `
 <RCTSafeAreaView
   emulateUnlessSupported={true}

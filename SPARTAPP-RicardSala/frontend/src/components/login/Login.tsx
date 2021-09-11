@@ -51,9 +51,12 @@ function Login({navigation}: any) {
             style={[styles.input__text, globalStyles.text__gray]}
             placeholder="example@example.com"
             value={userEmail}
+            testID="emailInput"
             onChangeText={text => setUserEmail(text)}
             textAlign="center"
+
             testID="emailInput"
+            autoCapitalize='none'
             textContentType="emailAddress"
             placeholderTextColor="#B2B1B9"
           />
@@ -64,6 +67,7 @@ function Login({navigation}: any) {
           <TextInput
             style={[styles.input__text, globalStyles.text__gray]}
             placeholder="password"
+            testID="passwordInput"
             value={userPassword}
             testID="passwordInput"
             secureTextEntry={true}
@@ -78,7 +82,7 @@ function Login({navigation}: any) {
         <TouchableOpacity
           style={[buttonStyles.littleButton]}
           onPress={() => navigation.push('Signup')}>
-          <Text style={[globalStyles.text__yellow, styles.login__text]}>
+          <Text style={[globalStyles.text__yellow, globalStyles.login__text]}>
             REGISTER
           </Text>
         </TouchableOpacity>
@@ -87,7 +91,7 @@ function Login({navigation}: any) {
           onPress={() =>  {
             handleLogin(userEmail, userPassword);
           }}>
-          <Text style={[globalStyles.text__yellow, styles.login__text]}>
+          <Text style={[globalStyles.text__yellow, globalStyles.login__text]}>
             LOGIN
           </Text>
         </TouchableOpacity>
