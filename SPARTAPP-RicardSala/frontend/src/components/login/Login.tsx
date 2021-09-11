@@ -54,8 +54,6 @@ function Login({navigation}: any) {
             testID="emailInput"
             onChangeText={text => setUserEmail(text)}
             textAlign="center"
-
-            testID="emailInput"
             autoCapitalize='none'
             textContentType="emailAddress"
             placeholderTextColor="#B2B1B9"
@@ -69,7 +67,6 @@ function Login({navigation}: any) {
             placeholder="password"
             testID="passwordInput"
             value={userPassword}
-            testID="passwordInput"
             secureTextEntry={true}
             onChangeText={text => setUserPassword(text)}
             textAlign="center"
@@ -80,6 +77,7 @@ function Login({navigation}: any) {
       </View>
       <View style={[globalStyles.aliginItems, buttonStyles.box__button]}>
         <TouchableOpacity
+        testID="signUpButton"
           style={[buttonStyles.littleButton]}
           onPress={() => navigation.push('Signup')}>
           <Text style={[globalStyles.text__yellow, globalStyles.login__text]}>
@@ -87,6 +85,7 @@ function Login({navigation}: any) {
           </Text>
         </TouchableOpacity>
         <TouchableOpacity
+         testID="loginButton"
           style={buttonStyles.littleButton}
           onPress={() =>  {
             handleLogin(userEmail, userPassword);
