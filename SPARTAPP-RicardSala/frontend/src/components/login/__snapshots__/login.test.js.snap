@@ -1,6 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-
 exports[`Given a Login component When it is rendered Then should match the snapshot 1`] = `
 <RCTSafeAreaView
   emulateUnlessSupported={true}
@@ -88,6 +87,7 @@ exports[`Given a Login component When it is rendered Then should match the snaps
         email
       </Text>
       <TextInput
+        autoCapitalize="none"
         onChangeText={[Function]}
         placeholder="example@example.com"
         placeholderTextColor="#B2B1B9"
@@ -196,9 +196,10 @@ exports[`Given a Login component When it is rendered Then should match the snaps
           },
           "shadowOpacity": 0.43,
           "shadowRadius": 9.51,
-          "width": 130,
+          "width": 160,
         }
       }
+      testID="signUpButton"
     >
       <Text
         style={
@@ -207,9 +208,11 @@ exports[`Given a Login component When it is rendered Then should match the snaps
               "color": "#FFD523",
             },
             Object {
-              "fontSize": 24,
+              "fontSize": 20,
               "fontWeight": "600",
               "justifyContent": "center",
+              "marginLeft": 10,
+              "marginRight": 10,
             },
           ]
         }
@@ -245,9 +248,10 @@ exports[`Given a Login component When it is rendered Then should match the snaps
           },
           "shadowOpacity": 0.43,
           "shadowRadius": 9.51,
-          "width": 130,
+          "width": 160,
         }
       }
+      testID="loginButton"
     >
       <Text
         style={
@@ -256,9 +260,11 @@ exports[`Given a Login component When it is rendered Then should match the snaps
               "color": "#FFD523",
             },
             Object {
-              "fontSize": 24,
+              "fontSize": 20,
               "fontWeight": "600",
               "justifyContent": "center",
+              "marginLeft": 10,
+              "marginRight": 10,
             },
           ]
         }
