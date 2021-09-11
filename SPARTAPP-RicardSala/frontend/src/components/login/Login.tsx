@@ -54,6 +54,8 @@ function Login({navigation}: any) {
             testID="emailInput"
             onChangeText={text => setUserEmail(text)}
             textAlign="center"
+
+            testID="emailInput"
             autoCapitalize='none'
             textContentType="emailAddress"
             placeholderTextColor="#B2B1B9"
@@ -67,6 +69,7 @@ function Login({navigation}: any) {
             placeholder="password"
             testID="passwordInput"
             value={userPassword}
+            testID="passwordInput"
             secureTextEntry={true}
             onChangeText={text => setUserPassword(text)}
             textAlign="center"
