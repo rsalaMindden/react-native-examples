@@ -37,17 +37,23 @@ params: {
         />
             <TouchableOpacity
               onPress={() => handleClick('AMRAP')}
+              testID='AMRAP'
               style={[styles.input__text]}>
               <Text style={[globalStyles.text__yellow, styles.input__text]}>
                 AMRAP
               </Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => handleClick('FOR TIME')}>
+            <TouchableOpacity 
+             testID='FOR TIME'
+              onPress={() => handleClick('FOR TIME')}>
               <Text style={[globalStyles.text__yellow, styles.input__text]}>
                 FOR TIME
               </Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => handleClick('ABS 5 ROUND')}>
+            
+            <TouchableOpacity 
+             testID='ABS'
+            onPress={() => handleClick('ABS 5 ROUND')}>
               <Text style={[globalStyles.text__yellow, styles.input__text]}>
                 ABS
               </Text>
