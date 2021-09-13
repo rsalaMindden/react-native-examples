@@ -1,4 +1,4 @@
-import React, { useEffect,useState } from 'react';
+import React, { useState } from 'react';
 import {Text, Image, Button, StyleSheet,SafeAreaView, Pressable, View} from 'react-native';
 import globalStyles from '../../theme/globalTheme';
 import Timer from '../timeBox/timeBox'
@@ -20,14 +20,16 @@ const Training = ({navigation,
     }
   return (
     <SafeAreaView style={[globalStyles.backgound, globalStyles.aliginItems]}>
-      <Pressable onPress={() => navigation.push('HomePage')}>
+      <Pressable
+      testID='HomePage'
+      onPress={() => navigation.push('HomePage')}>
         <Image
           style={[globalStyles.logo__Standar]}
           source={require('../../images/spartappYELLOW.png')}
         />
       </Pressable>
       <Button
-      
+      testID='exercise'
           title="Exercises List"
           onPress={() => navigation.push('PreTraining',{training})}
         />
