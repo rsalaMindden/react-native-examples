@@ -132,6 +132,7 @@ function Signup({navigation: {pop}}: any) {
           <TextInput
             style={[styles.input, globalStyles.text__gray]}
             placeholder="password"
+            testID='passwordInput'
             value={userPassword}
             secureTextEntry={true}
             textAlign="center"

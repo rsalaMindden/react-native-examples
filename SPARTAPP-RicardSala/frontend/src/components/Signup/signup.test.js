@@ -1,15 +1,18 @@
 import React from "react";
 import Signup from './Signup'
 import {render,fireEvent}from '../../utils/tetsUtils/test.utils'
+import {registerUser} from '../../redux/actions/actionCreators';
 
 const navigation={
-    pop:jest.fn()
+    pop:jest.fn(),
+    navigate:jest.fn()
 }
 jest.mock('../../redux/actions/actionCreators',()=>({
     registerUser: jest.fn()
   }));
 
 
+  handleUsernameFocus=jest.fn()
 
 describe('Given a Signup component',()=>{
     describe('When it is render',()=>{
@@ -50,14 +53,14 @@ describe('And you focus on emailInput', () => {
 })
 })
 
-describe('And username is valid but email is not', () => {
+describe('And name is valid but email is not', () => {
   describe('And you click registerButton', () => {
     let screen;
     beforeEach(() => {
+      screen=render(<Signup navigation={navigation}/>)
       const usernameInput = screen.getByTestId('usernameInput');
-      console.log(usernameInput)
       fireEvent(usernameInput, 'focus');
-      fireEvent.changeText(usernameInput, 'Juan');
+      fireEvent.changeText(usernameInput, 'Riki');
       const registerButton = screen.getByTestId('registerButton');
       fireEvent.press(registerButton);
     });
@@ -72,6 +75,63 @@ describe('And username is valid but email is not', () => {
         fireEvent(emailInput, 'focus');
         expect(screen.queryByTestId('invalidEmail')).toBe(null);
       });
+    });
+  });
+});
+describe('And name, email are valid but email is not', () => {
+  describe('And you click registerButton', () => {
+    let screen;
+    beforeEach(() => {
+      screen=render(<Signup navigation={navigation}/>)
+      const usernameInput = screen.getByTestId('usernameInput');
+      const emailInput = screen.getByTestId('emailInput');
+      fireEvent.changeText(usernameInput, 'Riki');
+      fireEvent(emailInput, 'focus');
+      fireEvent.changeText(emailInput, 'example@example.com');
+      const registerButton = screen.getByTestId('registerButton');
+      fireEvent.press(registerButton);
+    });
+
+    test('Then should render a Text with testId invalidPassword', () => {
+      expect(screen.queryByTestId('invalidPassword')).not.toBe(null);
+    });
+
+    describe('And you focus on passwordInput', () => {
+      test('Then should not render a Text with testId invalidPassword', () => {
+        const passwordInput = screen.getByTestId('passwordInput');
+        fireEvent(passwordInput, 'focus');
+        expect(screen.queryByTestId('invalidPassword')).toBe(null);
+      });
+    });
+  });
+});
+
+describe('And name, email, password, are valid', () => {
+  describe('And you click registerButton', () => {
+    const name = 'Riki';
+    const email = 'juan@email.com';
+    const password = 'Aa111111';
+   
+    let screen;
+    beforeEach(() => {
+      screen=render(<Signup navigation={navigation}/>)
+       registerUser.mockReturnValue({ type: '' });
+      const usernameInput = screen.getByTestId('usernameInput');
+      const emailInput = screen.getByTestId('emailInput');
+      const passwordInput = screen.getByTestId('passwordInput');
+      fireEvent.changeText(usernameInput, name);
+      fireEvent.changeText(emailInput, email);
+      fireEvent.changeText(passwordInput, password);
+      const registerButton = screen.getByTestId('registerButton');
+      fireEvent.press(registerButton);
+    });
+    test('Then should call registerUser with the name, email and password typed', () => {
+      expect(registerUser).toHaveBeenCalledWith({ name, email, password });
+    });
+
+    
+    test('Then should call navigation.pop', () => {
+      expect(navigation.pop).toHaveBeenCalled();
     });
   });
 });

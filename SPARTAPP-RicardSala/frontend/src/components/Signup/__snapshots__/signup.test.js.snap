@@ -247,6 +247,7 @@ exports[`Given a Signup component When it is render Then should match the snapsh
             },
           ]
         }
+        testID="passwordInput"
         textAlign="center"
         textContentType="newPassword"
         value=""
