@@ -46,24 +46,4 @@ describe('Given a HomePage component',()=>{
 
         })
       })
-      const store = mockStore({
-        trainingFiltereds:'asdasd'
-      });
-      describe('Given a HomePage component',()=>{
-        describe('When it is render',()=>{
-            let screen
-            beforeEach(()=>{
-                screen=render(<HomePage navigation={navigation}/>)
-            })
-            test('Then should match the snapshot',()=>{
-                expect(screen).toMatchSnapshot();
-              })
-      describe('And Training button is clicked', () => {
-        test('Then navigation.push should have been called with handleClick', () => {
-          const BUTTON = screen.getByTestId('Training');
-          fireEvent.press(BUTTON);
-          expect(navigation.push).toHaveBeenCalled();
-        });
-      });
-    });
-  });
+  
