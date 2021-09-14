@@ -44,6 +44,8 @@ const Home = ({navigation}: any) => {
         autoCapitalize="characters"
         placeholderTextColor="#FFD523"
         textAlign='center'
+        testID='Train'
+        value={search}
         onChangeText={(text: any) => setSearch(text)}
       />
 

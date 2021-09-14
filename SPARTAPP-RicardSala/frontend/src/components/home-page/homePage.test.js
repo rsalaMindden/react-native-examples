@@ -2,6 +2,7 @@ import React from "react";
 import HomePage from './HomePage'
 import {render,fireEvent}from '../../utils/tetsUtils/test.utils'
 
+
 const navigation={
     pop:jest.fn(),
     push:jest.fn()
@@ -9,7 +10,6 @@ const navigation={
 jest.mock('../../redux/actions/actionCreators',()=>({
     registerUser: jest.fn()
   }));
-
 
 
 describe('Given a HomePage component',()=>{
@@ -43,7 +43,31 @@ describe('Given a HomePage component',()=>{
               expect(navigation.push).toHaveBeenCalled();
             });
           });
-
-        })
-      })
-  
+          
+          
+        
+          describe('Given a HomePage component',()=>{
+            describe('When it is render',()=>{
+                let screen
+                const initialState = {trainings:[{
+                  name:'FOR TIME',
+                  _id:'1234'
+                }]}
+                beforeEach(()=>{
+                    screen=render(<HomePage navigation={navigation}/>,initialState)
+                })
+                    test('Then should match the snapshot',()=>{
+                    expect(screen).toMatchSnapshot();
+                  })
+          
+          describe('And email input text is changed', () => {
+            test('Then the text typed should be rendered', () => {
+              const trainingFiltereds = screen.getByTestId('Train');
+              fireEvent.changeText(trainingFiltereds, 'FOR TIME');
+              expect(screen.queryByDisplayValue('FOR TIME')).not.toBe(null);
+            });
+          });
+        });
+      });
+     })
+    })
