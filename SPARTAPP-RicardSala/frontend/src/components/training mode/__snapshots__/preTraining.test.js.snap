@@ -42,6 +42,7 @@ exports[`Given a PreTraining component When it is render Then should match tHe s
           "width": 146,
         }
       }
+      testID="HomePage"
     />
   </View>
   <RCTScrollView
