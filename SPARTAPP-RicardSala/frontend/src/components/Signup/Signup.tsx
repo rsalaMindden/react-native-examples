@@ -76,7 +76,9 @@ function Signup({navigation: {pop}}: any) {
   const [isValidPassword, setValidPassword] = useState(true);
   return (
     <SafeAreaView style={[globalStyles.backgound, globalStyles.aliginItems]}>
-      <Pressable onPress={handleLoginNavigation}>
+      <Pressable 
+      testID='loginPageButton'
+      onPress={handleLoginNavigation}>
         <Image
           style={globalStyles.logo__Standar}
           source={require('../../images/spartappYELLOW.png')}
@@ -96,6 +98,7 @@ function Signup({navigation: {pop}}: any) {
             style={[styles.input, globalStyles.text__gray]}
             placeholder="User name"
             value={username}
+            testID="usernameInput"
             textAlign="center"
             textContentType="name"
             placeholderTextColor="#B2B1B9"
@@ -103,7 +106,7 @@ function Signup({navigation: {pop}}: any) {
             onFocus={handleUsernameFocus}
           />
           {!isValidUsername && (
-            <Text style={globalStyles.invalid}>Type you userName</Text>
+            <Text testID="invalidUsername" style={globalStyles.invalid}>Type you userName</Text>
           )}
         </View>
         <View style={styles.box__input}>
@@ -112,6 +115,7 @@ function Signup({navigation: {pop}}: any) {
             style={[styles.input, globalStyles.text__gray]}
             placeholder="example@example.com"
             value={userEmail}
+            testID="emailInput"
             textAlign="center"
             textContentType="emailAddress"
             autoCapitalize="none"
@@ -120,7 +124,7 @@ function Signup({navigation: {pop}}: any) {
             onFocus={handleEmailFocus}
           />
           {!isValidEmail && (
-            <Text style={globalStyles.invalid}>Invalid email</Text>
+            <Text testID="invalidEmail" style={globalStyles.invalid}>Invalid email</Text>
           )}
         </View>
         <View style={styles.box__input}>
@@ -128,6 +132,7 @@ function Signup({navigation: {pop}}: any) {
           <TextInput
             style={[styles.input, globalStyles.text__gray]}
             placeholder="password"
+            testID='passwordInput'
             value={userPassword}
             secureTextEntry={true}
             textAlign="center"
@@ -136,9 +141,11 @@ function Signup({navigation: {pop}}: any) {
             onChangeText={handlePasswordChange}
             onFocus={handlePasswordFocus}
           />
-          <Text style={[globalStyles.invalid, styles.invalidPasswordText]}>
+           {!isValidPassword && (
+          <Text testID="invalidPassword" style={[globalStyles.invalid, styles.invalidPasswordText]}>
             Minimum: 8 characters, 1 uppercase, 1 lowercase and 1 number
           </Text>
+          )}
         </View>
       </View>
       <View
@@ -149,6 +156,7 @@ function Signup({navigation: {pop}}: any) {
         ]}>
         <TouchableOpacity
           style={[buttonStyles.littleButton]}
+          testID="registerButton"
           onPress={() => {
             handleRegister(userEmail, userPassword, username);
           }}>

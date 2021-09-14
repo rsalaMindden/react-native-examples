@@ -2,63 +2,61 @@ import React from 'react';
 import {
   TouchableOpacity,
   Text,
+  View,
   StyleSheet,
   SafeAreaView,
   ImageBackground,
 } from 'react-native';
-import {
-  Menu,
-  MenuOptions,
-  MenuTrigger,
-  renderers,
-} from 'react-native-popup-menu';
 
 import globalStyles from '../../theme/globalTheme';
+import { useSelector } from 'react-redux';
 
 export default function trainingpopUp({navigation}: any) {
-  function handleClickAMRAP() {
+  const trainings = useSelector((store: any) => store.trainings);
+
+  function handleClick(trainingName: string) {
+    const training=trainings.filter(({name}: any)=> name === trainingName)
     navigation.navigate({
       name: 'Training',
       merge: true,
-    });
-  }
-  function handleClickPYRAMIDAL() {
-    navigation.navigate({
-      name: 'Training',
-      merge: true,
+params: {
+  training
+}
     });
   }
   return (
     <SafeAreaView style={[globalStyles.backgound, globalStyles.aliginItems]}>
-      <Menu style={styles.menu} renderer={renderers.Popover}>
+      <View style={styles.menu} >
         <ImageBackground
           source={require('../../images/cronoImg.png')}
           resizeMode="cover"
           imageStyle={{borderRadius:15}}
           style={styles.trainingTypes__image}
         />
-        <MenuTrigger>
-          <MenuOptions>
+       
             <TouchableOpacity
-              onPress={handleClickAMRAP}
+            testID='FOR TIME'
+            onPress={() => handleClick('FOR TIME')}
               style={[styles.input__text]}>
               <Text style={[globalStyles.text__yellow, styles.input__text]}>
                 FOR TIME
               </Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={handleClickPYRAMIDAL}>
+            <TouchableOpacity 
+             testID='TABATA'
+            onPress={() => handleClick('TABATA')}>
               <Text style={[globalStyles.text__yellow, styles.input__text]}>
                 TABATA
               </Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={handleClickPYRAMIDAL}>
+            <TouchableOpacity 
+             testID='CRONO'
+            onPress={() => handleClick('CRONO')}>
               <Text style={[globalStyles.text__yellow, styles.input__text]}>
                 CRONO
               </Text>
             </TouchableOpacity>
-          </MenuOptions>
-        </MenuTrigger>
-      </Menu>
+       </View>
     </SafeAreaView>
   );
 }

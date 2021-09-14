@@ -57,6 +57,7 @@ const Home = ({navigation}: any) => {
           <ImageBackground
             source={require('../../images/trainingImg.png')}
             resizeMode="cover"
+            testID='popUpTraining'
             imageStyle={{borderRadius:15}}
             style={styles.trainingTypes__image}>
               <Text
@@ -72,6 +73,7 @@ const Home = ({navigation}: any) => {
 
           <Pressable onPress={() => navigation.push('popUpCrono')}>
           <ImageBackground
+          testID='popUpCrono'
             source={require('../../images/cronoImg.png')}
             resizeMode="cover"
             imageStyle={{borderRadius:15}}
@@ -89,6 +91,7 @@ const Home = ({navigation}: any) => {
 
             <Pressable onPress={() => navigation.push('popUpEquipment')}>
           <ImageBackground
+          testID='popUpEquipment'
             source={require('../../images/equipmentImg.png')}
             resizeMode="cover"
             imageStyle={{borderRadius:15}}
@@ -109,6 +112,7 @@ const Home = ({navigation}: any) => {
           <View key={train._id}  >
    <TouchableOpacity
     style={[buttonStyles.filter__box ,globalStyles.aliginItems]}
+    testID='Training'
     onPress={() => navigation.push('Training',{training:[train]})}
     >
    <Text style={[globalStyles.text__yellow,globalStyles.login__text]}  >

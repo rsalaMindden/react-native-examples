@@ -6,6 +6,9 @@ module.exports = {
   transformIgnorePatterns: [
     'node_modules/?!(react-navigation-shared-element)'
   ],
+  transform: {
+    '^.+\\.jsx?$': 'babel-jest',
+  },
   moduleFileExtensions: [
     'ts',
     'tsx',

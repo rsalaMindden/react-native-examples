@@ -1,6 +1,6 @@
 import { useEffect,useState, useRef} from "react"
 import React from 'react'
-import {View,Text, StyleSheet,Button, Pressable} from 'react-native'
+import {View,Text, StyleSheet, Pressable} from 'react-native'
 import globalStyles from '../../theme/globalTheme'
 
 const Timer = ({hoursMinSecs}:any) => {
