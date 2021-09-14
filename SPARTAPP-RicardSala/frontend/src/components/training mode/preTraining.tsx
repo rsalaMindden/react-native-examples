@@ -17,11 +17,11 @@ const PreTraining = ({navigation,
       training
     }
   }}: any) => {
-    console.log(training[0].exercises,'---><----')
  return (
    <SafeAreaView style={[globalStyles.backgound, globalStyles.aliginItems]}>
         <Pressable onPress={() => navigation.push('HomePage')}>
           <Image
+          testID='HomePage'
             style={globalStyles.logo__Standar}
             source={require('../../images/spartappYELLOW.png')}
             />
