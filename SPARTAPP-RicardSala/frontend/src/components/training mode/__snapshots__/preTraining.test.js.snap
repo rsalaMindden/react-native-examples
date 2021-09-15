@@ -47,6 +47,11 @@ exports[`Given a PreTraining component When it is render Then should match tHe s
   </View>
   <RCTScrollView
     horizontal={false}
+    style={
+      Object {
+        "borderRadius": 15,
+      }
+    }
   >
     <View>
       <View

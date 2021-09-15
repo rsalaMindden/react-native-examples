@@ -28,7 +28,7 @@ const PreTraining = ({navigation,
         </Pressable>
             <ScrollView
             horizontal={false}
-            >
+            style={{borderRadius:15}}>
         {training[0].exercises.map((exerciseList:any)=>(
           <View key={exerciseList._id} style={[styles.nextTraining__box,globalStyles.aliginItems]}>
         
