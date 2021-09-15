@@ -175,7 +175,7 @@ const styles = StyleSheet.create({
   nameBox: {
     marginTop: 10,
     marginLeft: 14,
-    alignSelf: 'flex-start',
+    alignSelf: 'center',
   },
 
   buttonsMargin: {
@@ -183,6 +183,7 @@ const styles = StyleSheet.create({
   },
 
   box__input: {
+    
     alignItems: 'center',
     shadowColor: '#000',
     shadowOffset: {
@@ -191,7 +192,6 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.43,
     shadowRadius: 9.51,
-
     elevation: 15,
   },
   input: {
