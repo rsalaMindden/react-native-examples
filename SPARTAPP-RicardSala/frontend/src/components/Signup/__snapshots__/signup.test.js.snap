@@ -88,7 +88,7 @@ exports[`Given a Signup component When it is render Then should match the snapsh
     style={
       Array [
         Object {
-          "alignSelf": "flex-start",
+          "alignSelf": "center",
           "marginLeft": 14,
           "marginTop": 10,
         },

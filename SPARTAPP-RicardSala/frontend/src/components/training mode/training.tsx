@@ -3,12 +3,13 @@ import {Text, Image, Button, StyleSheet,SafeAreaView, Pressable, View} from 'rea
 import globalStyles from '../../theme/globalTheme';
 import Timer from '../timeBox/timeBox'
 
-const Training = ({navigation,
+function Training({
+  navigation,
   route: {
     params: {
       training
     }
-  }}: any) => {
+  }}: any) {
     
     const MinSecs = { minutes: 30, seconds: 0}
     
@@ -71,7 +72,7 @@ const Training = ({navigation,
                  </View>
             </View>)
         ))}
-    
+  
     </View>
    
     </SafeAreaView>

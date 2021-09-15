@@ -14,8 +14,10 @@ const customRender = (ui, initialState, options) => {
   return render(ui, {
     wrapper: AllTheProviders,
     ...options
-  });
+  }
+  );
 };
+
 
 // re-export everything
 export * from '@testing-library/react-native';

@@ -17,18 +17,18 @@ const PreTraining = ({navigation,
       training
     }
   }}: any) => {
-    console.log(training[0].exercises,'---><----')
  return (
    <SafeAreaView style={[globalStyles.backgound, globalStyles.aliginItems]}>
         <Pressable onPress={() => navigation.push('HomePage')}>
           <Image
+          testID='HomePage'
             style={globalStyles.logo__Standar}
             source={require('../../images/spartappYELLOW.png')}
             />
         </Pressable>
             <ScrollView
             horizontal={false}
-            >
+            style={{borderRadius:15}}>
         {training[0].exercises.map((exerciseList:any)=>(
           <View key={exerciseList._id} style={[styles.nextTraining__box,globalStyles.aliginItems]}>
         

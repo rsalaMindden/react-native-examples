@@ -45,7 +45,7 @@ const Timer = ({hoursMinSecs}:any) => {
     
     return (
         <View style={[globalStyles.aliginItems]}>
-            <Pressable onPress={handleClick} >
+            <Pressable onPress={handleClick} testID="pauseButton">
             <Text style={[globalStyles.text__yellow, styles.crono]}>{`${mins
             .toString()
             .padStart(2, '0')}:${secs.toString().padStart(2, '0')}`}</Text> 

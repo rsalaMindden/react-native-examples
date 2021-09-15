@@ -1,5 +1,335 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Given a HomePage component When it is render Given a HomePage component When it is render Then should match the snapshot 1`] = `
+<RCTSafeAreaView
+  emulateUnlessSupported={true}
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#595260",
+        "flex": 1,
+      },
+      Object {
+        "alignItems": "center",
+      },
+    ]
+  }
+>
+  <Image
+    source={
+      Object {
+        "testUri": "../../../src/images/spartappYELLOW.png",
+      }
+    }
+    style={
+      Object {
+        "height": 31,
+        "marginTop": 54,
+        "width": 146,
+      }
+    }
+  />
+  <TextInput
+    autoCapitalize="characters"
+    onChangeText={[Function]}
+    placeholder="BUSCAR"
+    placeholderTextColor="#FFD523"
+    style={
+      Array [
+        Object {
+          "alignContent": "center",
+          "backgroundColor": "#2C2E43",
+          "borderRadius": 15,
+          "elevation": 15,
+          "fontSize": 20,
+          "fontWeight": "600",
+          "height": 41,
+          "marginTop": 35,
+          "shadowColor": "#000",
+          "shadowOffset": Object {
+            "height": 7,
+            "width": 0,
+          },
+          "shadowOpacity": 0.43,
+          "shadowRadius": 9.51,
+          "width": 206,
+        },
+        Object {
+          "color": "#B2B1B9",
+        },
+      ]
+    }
+    testID="Train"
+    textAlign="center"
+    value=""
+  />
+  <Image
+    source={
+      Object {
+        "testUri": "../../../src/images/magnifyingglass.png",
+      }
+    }
+    style={
+      Object {
+        "right": 75,
+        "top": -32,
+      }
+    }
+  />
+  <View>
+    <View
+      accessible={true}
+      collapsable={false}
+      focusable={true}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+    >
+      <View
+        accessibilityIgnoresInvertColors={true}
+        style={
+          Object {
+            "elevation": 15,
+            "height": 155,
+            "marginBottom": 35,
+            "shadowColor": "#000",
+            "shadowOffset": Object {
+              "height": 7,
+              "width": 0,
+            },
+            "shadowOpacity": 0.43,
+            "shadowRadius": 9.51,
+            "width": 310,
+          }
+        }
+      >
+        <Image
+          resizeMode="cover"
+          source={
+            Object {
+              "testUri": "../../../src/images/trainingImg.png",
+            }
+          }
+          style={
+            Array [
+              Object {
+                "bottom": 0,
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              },
+              Object {
+                "height": 155,
+                "width": 310,
+              },
+              Object {
+                "borderRadius": 15,
+              },
+            ]
+          }
+          testID="popUpTraining"
+        />
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#FFD523",
+              },
+              Object {
+                "fontSize": 20,
+                "fontWeight": "600",
+                "justifyContent": "center",
+                "marginLeft": 10,
+                "marginRight": 10,
+              },
+              Object {
+                "alignSelf": "center",
+                "marginTop": 25,
+              },
+            ]
+          }
+        >
+          TIPOS DE ENTRENAMIENTO
+        </Text>
+      </View>
+    </View>
+    <View
+      accessible={true}
+      collapsable={false}
+      focusable={true}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+    >
+      <View
+        accessibilityIgnoresInvertColors={true}
+        style={
+          Object {
+            "elevation": 15,
+            "height": 155,
+            "marginBottom": 35,
+            "shadowColor": "#000",
+            "shadowOffset": Object {
+              "height": 7,
+              "width": 0,
+            },
+            "shadowOpacity": 0.43,
+            "shadowRadius": 9.51,
+            "width": 310,
+          }
+        }
+      >
+        <Image
+          resizeMode="cover"
+          source={
+            Object {
+              "testUri": "../../../src/images/cronoImg.png",
+            }
+          }
+          style={
+            Array [
+              Object {
+                "bottom": 0,
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              },
+              Object {
+                "height": 155,
+                "width": 310,
+              },
+              Object {
+                "borderRadius": 15,
+              },
+            ]
+          }
+          testID="popUpCrono"
+        />
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#FFD523",
+              },
+              Object {
+                "fontSize": 20,
+                "fontWeight": "600",
+                "justifyContent": "center",
+                "marginLeft": 10,
+                "marginRight": 10,
+              },
+              Object {
+                "alignSelf": "center",
+                "marginTop": 25,
+              },
+            ]
+          }
+        >
+          OBJETIVO POR TIEMPO
+        </Text>
+      </View>
+    </View>
+    <View
+      accessible={true}
+      collapsable={false}
+      focusable={true}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+    >
+      <View
+        accessibilityIgnoresInvertColors={true}
+        style={
+          Object {
+            "elevation": 15,
+            "height": 155,
+            "marginBottom": 35,
+            "shadowColor": "#000",
+            "shadowOffset": Object {
+              "height": 7,
+              "width": 0,
+            },
+            "shadowOpacity": 0.43,
+            "shadowRadius": 9.51,
+            "width": 310,
+          }
+        }
+      >
+        <Image
+          resizeMode="cover"
+          source={
+            Object {
+              "testUri": "../../../src/images/equipmentImg.png",
+            }
+          }
+          style={
+            Array [
+              Object {
+                "bottom": 0,
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+              },
+              Object {
+                "height": 155,
+                "width": 310,
+              },
+              Object {
+                "borderRadius": 15,
+              },
+            ]
+          }
+          testID="popUpEquipment"
+        />
+        <Text
+          style={
+            Array [
+              Object {
+                "color": "#FFD523",
+              },
+              Object {
+                "fontSize": 20,
+                "fontWeight": "600",
+                "justifyContent": "center",
+                "marginLeft": 10,
+                "marginRight": 10,
+              },
+              Object {
+                "alignSelf": "center",
+                "marginTop": 25,
+              },
+            ]
+          }
+        >
+          EQIPAMIENTO
+        </Text>
+      </View>
+    </View>
+  </View>
+</RCTSafeAreaView>
+`;
+
 exports[`Given a HomePage component When it is render Then should match the snapshot 1`] = `
 <RCTSafeAreaView
   emulateUnlessSupported={true}
@@ -59,7 +389,9 @@ exports[`Given a HomePage component When it is render Then should match the snap
         },
       ]
     }
+    testID="Train"
     textAlign="center"
+    value=""
   />
   <Image
     source={
