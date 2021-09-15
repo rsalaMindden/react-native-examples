@@ -154,6 +154,7 @@ exports[`Given a Training component When it is render Then should match tHe snap
         onResponderTerminate={[Function]}
         onResponderTerminationRequest={[Function]}
         onStartShouldSetResponder={[Function]}
+        testID="pauseButton"
       >
         <Text
           style={
