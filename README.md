@@ -30,5 +30,17 @@ The project is a fullstack app made with React native, the purpose of it is the 
 
 
 ## Setup
+Rename `.env.example` to `.env` and fill with the right data in backend and frontend.
+### In the directory, you can run:
+
+* `npm start`
+Runs the app in http://localhost:5013.
+
+* `npm test`
+Launches the test runner in the interactive watch mode.
+
+
+
+
 
 `npm i` This command installs a package and any packages that it depends on. 
