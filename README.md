@@ -30,8 +30,10 @@ The project is a fullstack app made with React native, the purpose of it is the 
 
 
 ## Setup
+`npm i` This command installs a package and any packages that it depends on. 
 Rename `.env.example` to `.env` and fill with the right data in backend and frontend.
-### In the directory, you can run:
+
+### In the Backend directory, you can run:
 
 * `npm start`
 Runs the app in http://localhost:5013.
@@ -39,8 +41,10 @@ Runs the app in http://localhost:5013.
 * `npm test`
 Launches the test runner in the interactive watch mode.
 
+### In the Frontend directory, you can run:
 
+* `npm run ios`
+Runs the app in an ios emulator.
 
-
-
-`npm i` This command installs a package and any packages that it depends on. 
+* `npm test`
+Launches the test runner in the interactive watch mode.
